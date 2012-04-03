@@ -1,0 +1,37 @@
+name: JSBanks
+main: com.imjake9.server.banks.JSBanks
+description: Adds hybrid physical/economy shops to Minecraft.
+version: 1.1
+author: imjake9
+depend: [JSLib, Vault]
+
+commands:
+  bcreate:
+    description: Creates a bank.
+    usage: /<command> [owners...]
+    aliases: [cbank]
+  bremove:
+    description: Removes a bank.
+    usage: /<command>
+    aliases: [rbank]
+  jsbanks:
+    description: Admin commands.
+    usage: /<command> [subcommand]
+    aliases: [jsb]
+  bdeposit:
+    description: Deposits iConomy cash into a bank.
+    usage: /<command> [amount]
+    aliases: [bdep, bplus, badd]
+  bwithdraw:
+    description: Withdraws iConomy cash from a bank.
+    usage: /<command> [amount]
+    aliases: [bwith, bminus, bsubtract, bsub]
+
+permissions:
+  jsbanks.basic:
+    description: Gives all basic JSBanks commands.
+    children:
+      jsbanks.bcreate: true
+      jsbanks.bremove: true
+      jsbanks.bdeposit: true
+      jsbanks.bwithdraw: true
