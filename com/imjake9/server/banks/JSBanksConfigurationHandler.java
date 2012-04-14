@@ -68,7 +68,7 @@ public class JSBanksConfigurationHandler {
             banks.load(b);
             
         } catch (Exception ex) {
-            JSBanks.getPlugin().getMessager().severe("Error loading config.");
+            JSBanks.getMessager().severe("Error loading config.");
             ex.printStackTrace();
         }
     }
@@ -83,7 +83,7 @@ public class JSBanksConfigurationHandler {
             banks.save(b);
             
         } catch (Exception ex) {
-            JSBanks.getPlugin().getMessager().severe("Error saving config.");
+            JSBanks.getMessager().severe("Error saving config.");
             ex.printStackTrace();
         }
     }
