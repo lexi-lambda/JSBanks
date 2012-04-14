@@ -41,7 +41,7 @@ public class JSBankChestInventory {
      */
     public static Location fromChestID(String id) {
         String[] wData = id.split(".");
-        String[] lData = wData[1].split("+");
+        String[] lData = wData[1].split("\\+");
         Location loc = new Location(
                 Bukkit.getWorld(wData[0]),
                 Integer.parseInt(lData[0]),
