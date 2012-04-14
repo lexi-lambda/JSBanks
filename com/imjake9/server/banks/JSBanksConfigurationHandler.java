@@ -1,7 +1,6 @@
 package com.imjake9.server.banks;
 
 import com.imjake9.server.banks.utils.JSBCurrencyManager;
-import com.imjake9.server.banks.utils.JSBMessaging;
 import com.imjake9.server.banks.utils.JSBank;
 import java.io.File;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -69,7 +68,7 @@ public class JSBanksConfigurationHandler {
             banks.load(b);
             
         } catch (Exception ex) {
-            JSBMessaging.severe("Error loading config.");
+            JSBanks.getPlugin().getMessager().severe("Error loading config.");
             ex.printStackTrace();
         }
     }
@@ -84,7 +83,7 @@ public class JSBanksConfigurationHandler {
             banks.save(b);
             
         } catch (Exception ex) {
-            JSBMessaging.severe("Error saving config.");
+            JSBanks.getPlugin().getMessager().severe("Error saving config.");
             ex.printStackTrace();
         }
     }

@@ -1,19 +1,18 @@
 package com.imjake9.server.banks;
 
 import com.imjake9.server.banks.utils.JSBank;
+import com.imjake9.server.lib.plugin.JSPlugin;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.plugin.RegisteredServiceProvider;
-import org.bukkit.plugin.java.JavaPlugin;
 
-public class JSBanks extends JavaPlugin {
+public class JSBanks extends JSPlugin {
     
     private static JSBanks plugin;
     
     private JSBanksCommandHandler commandHandler;
     private JSBanksConfigurationHandler configurationHandler;
     private JSBanksChestListener inventoryListener;
-    private JSBanksPermissionsHandler permissionsHandler;
     
     private Economy vaultEconomy;
     
@@ -22,13 +21,12 @@ public class JSBanks extends JavaPlugin {
     }
     
     @Override
-    public void onEnable() {
+    public void onJSEnable() {
         plugin = this;
         
         commandHandler = new JSBanksCommandHandler();
         configurationHandler = new JSBanksConfigurationHandler();
         inventoryListener = new JSBanksChestListener();
-        permissionsHandler = new JSBanksPermissionsHandler();
         
         JSBanksConfigurationHandler.loadBanks();
         JSBanksConfigurationHandler.loadConfig();
@@ -41,7 +39,7 @@ public class JSBanks extends JavaPlugin {
     }
     
     @Override
-    public void onDisable() {
+    public void onJSDisable() {
         JSBanksConfigurationHandler.saveBanks();
     }
     
@@ -55,10 +53,6 @@ public class JSBanks extends JavaPlugin {
     
     public static JSBanksConfigurationHandler getConfigurationHandler() {
         return plugin.configurationHandler;
-    }
-    
-    public static JSBanksPermissionsHandler getPermissionsHandler() {
-        return plugin.permissionsHandler;
     }
     
     public static Economy getEconomy() {

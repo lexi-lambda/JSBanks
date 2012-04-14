@@ -1,7 +1,7 @@
 package com.imjake9.server.banks;
 
 import com.imjake9.server.banks.utils.JSBCurrencyManager;
-import com.imjake9.server.banks.utils.JSBMessaging.JSBMessage;
+import com.imjake9.server.banks.utils.JSBMessage;
 import com.imjake9.server.banks.utils.JSBank;
 import com.imjake9.server.banks.utils.JSBankChestInventory;
 import com.imjake9.server.lib.Messaging;

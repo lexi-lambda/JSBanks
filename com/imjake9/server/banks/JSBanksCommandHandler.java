@@ -1,6 +1,6 @@
 package com.imjake9.server.banks;
 
-import com.imjake9.server.banks.utils.JSBMessaging.JSBMessage;
+import com.imjake9.server.banks.utils.JSBMessage;
 import com.imjake9.server.lib.Messaging;
 import com.imjake9.server.lib.Messaging.JSMessage;
 import java.util.ArrayList;
@@ -151,11 +151,11 @@ public class JSBanksCommandHandler implements CommandExecutor {
         }
         
         public String getPermission() {
-            return JSBanksPermissionsHandler.getPermission(name().toLowerCase());
+            return JSBanks.getPlugin().getPermissionsManager().getPermission(name().toLowerCase());
         }
         
         public boolean hasPermission(CommandSender sender) {
-            return JSBanksPermissionsHandler.hasPermission(sender, name().toLowerCase());
+            return JSBanks.getPlugin().getPermissionsManager().hasPermission(sender, name().toLowerCase());
         }
         
         public String getPermissionMessage() {
@@ -163,11 +163,11 @@ public class JSBanksCommandHandler implements CommandExecutor {
         }
         
         public String getSubPermission(String node) {
-            return JSBanksPermissionsHandler.getPermission(name().toLowerCase() + "." + node);
+            return JSBanks.getPlugin().getPermissionsManager().getPermission(name().toLowerCase() + "." + node);
         }
         
         public boolean hasSubPermission(CommandSender sender, String node) {
-            return JSBanksPermissionsHandler.hasPermission(sender, name().toLowerCase() + "." + node);
+            return JSBanks.getPlugin().getPermissionsManager().hasPermission(sender, name().toLowerCase() + "." + node);
         }
         
         public abstract boolean handle(CommandSender sender, String... args);
