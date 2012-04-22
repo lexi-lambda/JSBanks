@@ -36,6 +36,7 @@ public enum JSBMessage implements MessageTemplate {
     }
 
     JSBMessage(String format) {
+        this(MessageLevel.NORMAL, format);
     }
 
     @Override
