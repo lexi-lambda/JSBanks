@@ -151,11 +151,11 @@ public class JSBanksCommandHandler implements CommandExecutor {
         }
         
         public String getPermission() {
-            return JSBanks.getPermissionsManager().getPermission(name().toLowerCase());
+            return JSBanks.getPlugin().getPermissionsManager().getPermission(name().toLowerCase());
         }
         
         public boolean hasPermission(CommandSender sender) {
-            return JSBanks.getPermissionsManager().hasPermission(sender, name().toLowerCase());
+            return JSBanks.getPlugin().getPermissionsManager().hasPermission(sender, name().toLowerCase());
         }
         
         public String getPermissionMessage() {
@@ -163,11 +163,11 @@ public class JSBanksCommandHandler implements CommandExecutor {
         }
         
         public String getSubPermission(String node) {
-            return JSBanks.getPermissionsManager().getPermission(name().toLowerCase() + "." + node);
+            return JSBanks.getPlugin().getPermissionsManager().getPermission(name().toLowerCase() + "." + node);
         }
         
         public boolean hasSubPermission(CommandSender sender, String node) {
-            return JSBanks.getPermissionsManager().hasPermission(sender, name().toLowerCase() + "." + node);
+            return JSBanks.getPlugin().getPermissionsManager().hasPermission(sender, name().toLowerCase() + "." + node);
         }
         
         public abstract boolean handle(CommandSender sender, String... args);
