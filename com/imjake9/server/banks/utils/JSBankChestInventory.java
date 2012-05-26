@@ -75,7 +75,7 @@ public class JSBankChestInventory {
     public static JSBankChestInventory fromInventoryEvent(final InventoryEvent event) {
         if (event.getInventory().getType() != InventoryType.CHEST) return null;
         InventoryHolder holder = event.getInventory().getHolder();
-        if (!(holder instanceof Chest) || !(holder instanceof DoubleChest)) return null;
+        if (!(holder instanceof Chest) && !(holder instanceof DoubleChest)) return null;
         Chest chest = (event.getInventory().getHolder() instanceof DoubleChest)
                 ? (Chest) ((DoubleChest)event.getInventory().getHolder()).getLeftSide()
                 : (Chest) event.getInventory().getHolder();
